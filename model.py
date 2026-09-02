@@ -1,29 +1,7 @@
-"""
-model.py
---------
-Modelo basado en agentes para control de congestion en una red de 50 nodos.
-Curso: Sistemas Complejos - Examen Parcial.
-
-Este archivo intenta usar el framework Mesa (mesa.Agent, mesa.Model,
-mesa.time.RandomActivation). Si Mesa no esta instalado en el entorno donde
-se ejecuta (por ejemplo, para pruebas rapidas sin dependencias), se usa un
-"shim" interno con la misma interfaz minima, de modo que el codigo de la
-simulacion (que es lo que realmente importa para el parcial) es identico
-en ambos casos.
-
-Para el entregable final, instale Mesa con:
-    pip install "mesa<3.0"
-(se usa la API clasica Agent(unique_id, model) + mesa.time.RandomActivation,
-disponible en Mesa 1.x y 2.x).
-"""
-
 import random
 import itertools
 import networkx as nx
 
-# ---------------------------------------------------------------------------
-# Compatibilidad con Mesa
-# ---------------------------------------------------------------------------
 try:
     from mesa import Agent as MesaAgent, Model as MesaModel
     from mesa.time import RandomActivation

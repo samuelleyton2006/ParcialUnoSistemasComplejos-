@@ -1,16 +1,3 @@
-"""
-demo.py
--------
-Ejecuta UNA corrida rapida (util para la sustentacion / demo en vivo) y
-muestra en consola las metricas obligatorias, ademas de guardar una
-imagen del estado final de la red.
-
-Uso:
-    python3 demo.py                       # escenario 'alta', sin control
-    python3 demo.py --control             # escenario 'alta', con control
-    python3 demo.py --scenario media --steps 200
-"""
-
 import argparse
 import os
 

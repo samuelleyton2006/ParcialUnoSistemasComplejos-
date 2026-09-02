@@ -1,18 +1,3 @@
-"""
-visualize.py
-------------
-Genera las evidencias graficas pedidas en el parcial:
-
-  1. network_snapshot_<tag>.png   -> estado de la red (nodos coloreados por
-     nivel de congestion: normal / warning / critical) en un paso dado.
-  2. timeseries_<escenario>.png   -> dinamica en el tiempo (cola media,
-     proporcion de nodos congestionados, throughput) comparando
-     sin control vs con control, para un escenario.
-  3. comparison_bars.png          -> barras comparativas (con barras de error)
-     de las metricas obligatorias entre condiciones, para los 3 escenarios.
-
-Todas las figuras se guardan en outputs/.
-"""
 
 import os
 import csv
