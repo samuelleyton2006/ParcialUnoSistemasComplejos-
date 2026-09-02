@@ -9,14 +9,6 @@ pip install -r requirements.txt
 # equivalente a: pip install "mesa<3.0" networkx matplotlib
 ```
 
-> **Nota sobre Mesa:** `model.py` intenta `import mesa`. Si Mesa no está
-> instalado, usa automáticamente un "shim" interno con la misma interfaz
-> mínima (`Agent`, `Model`, `mesa.time.RandomActivation`), así el código
-> corre igual para hacer pruebas rápidas. Para la entrega final, instale
-> Mesa real (`pip install "mesa<3.0"`) — el código usa la API clásica
-> `Agent(unique_id, model)` + `RandomActivation`, estable en Mesa 1.x/2.x.
-> Si su versión de Mesa es 3.x y cambió la firma de `Agent.__init__`,
-> ajuste esa única línea en `NetworkNodeAgent.__init__`.
 
 ## 2. Ejecución rápida (demo / sustentación)
 
@@ -150,22 +142,3 @@ preguntas orientadoras 4 y 5 del enunciado.
 | Red | N | `self.G` (grafo `networkx`) |
 | Regla local | (α↔β, m) → estado′ | `get_next_hop`, `control_phase`, actualización de `queue`/`status` en `NetworkCongestionModel.step` |
 
-## 12. Reproducibilidad
-
-Todas las semillas se fijan explícitamente (`seed` en el constructor del
-modelo y `BASE_SEED` en `experiments.py`). Los parámetros de red, tráfico
-y control están centralizados en `FIXED_PARAMS` y `SCENARIOS` dentro de
-`experiments.py`, y se pueden modificar sin tocar la lógica del modelo.
-
-## 13. Estructura del proyecto
-
-```
-congestion_sim/
-├── model.py          # Agente, Modelo, Paquete, control distribuido
-├── experiments.py     # Escenarios × control × repeticiones -> CSV
-├── visualize.py        # Figuras (red, series de tiempo, barras comparativas)
-├── demo.py             # Corrida rápida individual para sustentación
-├── requirements.txt
-├── README.md
-└── outputs/            # CSVs y PNGs generados
-```
